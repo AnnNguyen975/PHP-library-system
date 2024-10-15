@@ -16,7 +16,7 @@
     <div class="bg-info">
         <h2 class="text-center">Login</h2>
         <div class="container text-center">
-            <form action="">
+            <form action="../actions/register.php" method="POST">
                 <div class="mb-3">
                     <input type="text" class="form-control w-50 m-auto" name="username" placeholder="Enter your name"
                         required="required">
@@ -35,5 +35,7 @@
         </div>
     </div>
 </body>
+
+.
 
 </html>

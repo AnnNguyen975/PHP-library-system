@@ -15,13 +15,13 @@
     <div class="bg-info py-4">
         <h2 class="text-center">Register Account</h2>
         <div class="container text-center">
-            <form action="">
+            <form action="../actions/register.php" method="POST">
                 <div class="mb-3">
                     <input type="text" class="form-control w-50 m-auto" placeholder="Enter your username"
                         required="required" name="username">
                 </div>
                 <div class="mb-3">
-                    <input type="number" class="form-control w-50 m-auto" name="mobile" placeholder="Enter your mobile"
+                    <input type="text" class="form-control w-50 m-auto" name="mobile" placeholder="Enter your mobile"
                         required="required" maxLength="10" minlength="10">
                 </div>
                 <div class="mb-3">
@@ -30,11 +30,9 @@
                 </div>
                 <div class="mb-3">
                     <input type="password" class="form-control w-50 m-auto" name="cpassword"
-                        placeholder="Conform password" required="required">
+                        placeholder="Confirm password" required="required">
                 </div>
-                <div class="mb-3">
-                    <input type="file" class="form-control w-50 m-auto" name="photo">
-                </div>
+
                 <button type="submit" class="btn btn-dark my-4">Register</button>
                 <p>Already have an account?<a href="../index.php" class="text-white">Login here</a></p>
             </form>
