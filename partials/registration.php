@@ -32,7 +32,12 @@
                     <input type="password" class="form-control w-50 m-auto" name="cpassword"
                         placeholder="Confirm password" required="required">
                 </div>
-
+                <div>
+                    <select name="group" class="form-select w-50 m-auto">
+                        <option value="Administrator">Administrator</option>
+                        <option value="User">User</option>
+                    </select>
+                </div>
                 <button type="submit" class="btn btn-dark my-4">Register</button>
                 <p>Already have an account?<a href="../index.php" class="text-white">Login here</a></p>
             </form>
