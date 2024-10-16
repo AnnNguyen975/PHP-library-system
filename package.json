@@ -2,4 +2,10 @@
   "dependencies": {
     "tailwindcss": "^3.4.14"
   }
+
+
+  ,"scripts": {
+    "build": "npm tailwindcss build src/styles.css -o dist/output.css"
+  }
 }
+

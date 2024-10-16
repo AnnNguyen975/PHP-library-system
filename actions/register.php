@@ -14,7 +14,7 @@ if ($password != $cpassword) {
     </script>';
 } else {
     // Insert into the database without the photo field
-    $sql = "INSERT INTO userdata (username, mobile, password, borrow, status, `group`) 
+    $sql = "INSERT INTO userdata (username, mobile, password, borrow, status, `groups`) 
             VALUES ('$username', '$mobile', '$password', 0, 0, '$group')";
     $result = mysqli_query($con, $sql);
 
