@@ -14,7 +14,7 @@
 </head>
 
 <body class="font-serif">
-    <h1 class="text-red-500">Hello World</h1>
+
     <h1 class="text-info text-center p-3">Book Library System</h1>
     <div class="bg-info">
         <h2 class="text-center">Login</h2>

@@ -1,14 +1,15 @@
 <?php
+session_start();
 include('connect.php'); // Ensure your database connection is included
 
 // Get data from the POST request
 $username = $_POST['username'];
 $mobile = $_POST['mobile'];
 $password = $_POST['password']; // Keeping this variable for completeness, but it won't be used.
-$group = $_POST['group']; // Make sure this input exists in your form
+$groups = $_POST['group']; // Make sure this input exists in your form
 
 // Use prepared statements to prevent SQL injection (recommended)
-$sql = "SELECT * FROM userdata WHERE username=? AND mobile=? AND `group`=?";
+$sql = "SELECT * FROM userdata WHERE username=? AND mobile=? AND `groups`=?";
 $stmt = $con->prepare($sql);
 
 // Check if the statement was prepared correctly
@@ -17,7 +18,7 @@ if ($stmt === false) {
 }
 
 // Bind the parameters
-$stmt->bind_param("sss", $username, $mobile, $group); // Adjust the binding according to your query
+$stmt->bind_param("sss", $username, $mobile, $groups); // Adjust the binding according to your query
 
 // Execute the statement
 $stmt->execute();
@@ -28,15 +29,25 @@ if ($result->num_rows > 0) {
     $user = $result->fetch_assoc(); // Fetch user data
 
     // Check the user's group and redirect accordingly
-    if ($user['group'] === 'Administrator') {
+    if ($user['groups'] === 'Administrator') {
+        $_SESSION['id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['mobile'] = $user['mobile'];
+        $_SESSION['group'] = $user['group'];
+        header("Location: ../loginforad.php");
         echo '<script>
             alert("Login successful as Administrator");
-            window.location = "../loginforad.php";
+            
         </script>';
-    } elseif ($user['group'] === 'User') {
+    } elseif ($user['groups'] === 'User') {
+        $_SESSION['id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['mobile'] = $user['mobile'];
+        $_SESSION['group'] = $user['group'];
+        header("Location: ../loginpageforuser.php");
         echo '<script>
             alert("Login successful as User");
-            window.location = "../loginpageforuser.php";
+            
         </script>';
     }
 } else {

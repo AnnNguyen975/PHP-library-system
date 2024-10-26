@@ -13,22 +13,35 @@ if ($password != $cpassword) {
     window.location="../partials/registration.php";
     </script>';
 } else {
-    // Insert into the database without the photo field
-    $sql = "INSERT INTO userdata (username, mobile, password, borrow, status, `groups`) 
-            VALUES ('$username', '$mobile', '$password', 0, 0, '$group')";
-    $result = mysqli_query($con, $sql);
+    // Check for duplicate username
+    $checkUsernameSql = "SELECT * FROM userdata WHERE username = '$username'";
+    $checkResult = mysqli_query($con, $checkUsernameSql);
 
-    if ($result) {
+    if (mysqli_num_rows($checkResult) > 0) {
+        // Username already exists
         echo '<script>
-        alert("Registration successful");
-        window.location="../index.php";
-        </script>';
-    } else {
-        // Capture the SQL error
-        $error = mysqli_error($con);
-        echo '<script>
-        alert("Error in registration: ' . $error . '");
+        alert("Username already exists. Please choose a different one.");
         window.location="../partials/registration.php";
         </script>';
+    } else {
+        // Insert into the database if no duplicate is found
+        $sql = "INSERT INTO userdata (username, mobile, password, `groups`) 
+                VALUES ('$username', '$mobile', '$password', '$group')";
+        $result = mysqli_query($con, $sql);
+
+        if ($result) {
+            echo '<script>
+            alert("Registration successful");
+            window.location="../index.php";
+            </script>';
+        } else {
+            // Capture the SQL error
+            $error = mysqli_error($con);
+            echo '<script>
+            alert("Error in registration: ' . $error . '");
+            window.location="../partials/registration.php";
+            </script>';
+        }
     }
 }
+?>
