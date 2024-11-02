@@ -4,12 +4,10 @@ include('connect.php'); // Ensure your database connection is included
 
 // Get data from the POST request
 $username = $_POST['username'];
-$mobile = $_POST['mobile'];
-$password = $_POST['password']; // Keeping this variable for completeness, but it won't be used.
-$groups = $_POST['group']; // Make sure this input exists in your form
+$password = $_POST['password'];
 
 // Use prepared statements to prevent SQL injection (recommended)
-$sql = "SELECT * FROM userdata WHERE username=? AND mobile=? AND `groups`=?";
+$sql = "SELECT * FROM userdata WHERE username=? ";
 $stmt = $con->prepare($sql);
 
 // Check if the statement was prepared correctly
@@ -18,7 +16,7 @@ if ($stmt === false) {
 }
 
 // Bind the parameters
-$stmt->bind_param("sss", $username, $mobile, $groups); // Adjust the binding according to your query
+$stmt->bind_param("s", $username); // Adjust the binding according to your query
 
 // Execute the statement
 $stmt->execute();

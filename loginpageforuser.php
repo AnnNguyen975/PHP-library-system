@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
+    <link rel="icon" href="img/icon.avif" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -22,7 +23,7 @@
                     if (isset($_SESSION['username'])) {
                         echo "<p><strong>Name:</strong> " . htmlspecialchars($_SESSION['username']) . "</p>";
                         echo "<p><strong>Mobile:</strong> " . htmlspecialchars($_SESSION['mobile']) . "</p>";
-                        echo "<a href='logout.php' class='btn btn-danger'>Logout</a>";
+                        echo "<a href='actions/logout.php' class='btn btn-danger'>Logout</a>";
                     } else {
                         echo "<p>Please log in to see user information.</p>";
                     }

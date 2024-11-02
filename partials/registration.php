@@ -5,43 +5,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Registration Page</title>
+    <link rel="icon" href="../img/icon.avif" type="image/png">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="../dist/output1.css" rel="stylesheet">
 </head>
 
-<body class="bg-dark">
-    <h1 class="text-center text-info p-3">Borrow System</h1>
-    <div class="bg-info py-4">
-        <h2 class="text-center">Register Account</h2>
-        <div class="container text-center">
-            <form action="../actions/register.php" method="POST">
-                <div class="mb-3">
-                    <input type="text" class="form-control w-50 m-auto" placeholder="Enter your username"
-                        required="required" name="username">
-                </div>
-                <div class="mb-3">
-                    <input type="text" class="form-control w-50 m-auto" name="mobile" placeholder="Enter your mobile"
-                        required="required" maxLength="10" minlength="10">
-                </div>
-                <div class="mb-3">
-                    <input type="password" class="form-control w-50 m-auto" name="password"
-                        placeholder="Enter your password" required="required">
-                </div>
-                <div class="mb-3">
-                    <input type="password" class="form-control w-50 m-auto" name="cpassword"
-                        placeholder="Confirm password" required="required">
-                </div>
-                <div>
-                    <select name="group" class="form-select w-50 m-auto">
-                        <option value="Administrator">Administrator</option>
-                        <option value="User">User</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-dark my-4">Register</button>
-                <p>Already have an account?<a href="../index.php" class="text-white">Login here</a></p>
-            </form>
-        </div>
+<body class="flex items-center justify-center min-h-screen bg-cover bg-center"
+    style="background-image: url('../img/image.jpg');">
+
+    <div class="w-96  p-4 bg-transparent border-2 border-white/20 backdrop-blur-lg shadow-lg rounded-lg text-white">
+        <form action="../actions/register.php" method="POST">
+            <h1 class="text-[#d87093] text-3xl font-bold text-center mb-6">Registration Page</h1>
+
+            <div class="relative mb-6">
+                <input
+                    class="text-[#d87093] w-full h-12 px-4 pr-10 bg-transparent border border-white/20 rounded-full  placeholder-white focus:outline-none"
+                    type="text" name="username" placeholder="Username" required>
+                <i class='text-[#d87093] bx bxs-user absolute right-4 top-1/2 transform -translate-y-1/2 text-lg'></i>
+            </div>
+            <div class="relative mb-6">
+                <input
+                    class="text-[#d87093] w-full h-12 px-4 pr-10 bg-transparent border border-white/20 rounded-full  placeholder-white focus:outline-none"
+                    type="password" name="password" placeholder="Password" required>
+                <i
+                    class='text-[#d87093] bx bxs-lock-alt absolute right-4 top-1/2 transform -translate-y-1/2 text-lg'></i>
+            </div>
+            <div class="relative mb-6">
+                <input
+                    class="text-[#d87093] w-full h-12 px-4 pr-10 bg-transparent border border-white/20 rounded-full  placeholder-white focus:outline-none"
+                    type="password" name="cpassword" placeholder="Confirm Password" required>
+                <i
+                    class='text-[#d87093] bx bxs-lock-alt absolute right-4 top-1/2 transform -translate-y-1/2 text-lg'></i>
+            </div>
+            <div class="flex relative mb-6 items-center"> <!-- Added flex and items-center -->
+                <select name="group"
+                    class="text-[#d87093] w-full h-12 px-4 pr-10 bg-transparent border border-white/20 rounded-full  placeholder-white focus:outline-none">
+                    <option value="Administrator">Administrator</option>
+                    <option value="User">User</option>
+                </select>
+            </div>
+
+            <button
+                class="text-[#d87093] w-full h-11 bg-white  rounded-full font-semibold shadow hover:bg-gray-200 transition"
+                type="submit">Register</button>
+
+            <div class="text-center text-sm mt-6">
+                <p>Already have an account?<a href="../index.php"
+                        class="text-[#d87093] font-semibold hover:underline">Login here</a></p>
+
+            </div>
+        </form>
     </div>
 </body>
 

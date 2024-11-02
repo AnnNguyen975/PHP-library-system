@@ -1,11 +1,8 @@
 {
-  "dependencies": {
+  "devDependencies": {
     "tailwindcss": "^3.4.14"
-  }
-
-
-  ,"scripts": {
-    "build": "npm tailwindcss build src/styles.css -o dist/output.css"
+  },
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/styles.css -o ./dist/output.css --watch"  
   }
 }
-
