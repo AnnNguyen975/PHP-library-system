@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <h1>Books </h1>
+
     <div id="books-container"></div>
 
     <!-- Upload Form -->

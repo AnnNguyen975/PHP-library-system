@@ -44,5 +44,5 @@ $_SESSION['password_change_messages'] = $messages;
 
 
 // Redirect back to the user dashboard or wherever you want
-header("Location: ../loginpageforuser.php");
+header("Location: ../index.php");
 exit;
