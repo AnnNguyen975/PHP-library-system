@@ -8,7 +8,7 @@
     <title>Registration Page</title>
     <link rel="icon" href="../img/icon.avif" type="image/png">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link href="../dist/output1.css" rel="stylesheet">
+    <link rel="stylesheet" href="../dist/output.css">
 </head>
 
 <body class="flex items-center justify-center min-h-screen bg-cover bg-center"
